@@ -5,6 +5,7 @@ The **Jonabron** Channel provides the following packages:
 - emacs-fancy-dabbrev
 - naitre
 - font-bundle-synapsian-karamarea
+- vicinae
 # Usage
 Add the **Jonabron** Channel to your Guix `channels.scm`, located at "~/.config/guix/channels.scm":
 ```scm
