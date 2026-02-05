@@ -1,5 +1,5 @@
 # Jonabron Channel
-![Guix Banner](https://raw.githubusercontent.com/nixpup/jonabron/refs/heads/main/guixBanner.jpg)
+![Guix Banner](https://raw.githubusercontent.com/nixpup/jonabron/refs/heads/master/guixBanner.jpg)
 # Info
 ## Provides
 The **Jonabron** Channel provides the following packages:
