@@ -1,3 +1,4 @@
 (channel
  (version 0)
+ (url "https://github.com/nixpup/jonabron.git")
  (directory "jonabron"))
