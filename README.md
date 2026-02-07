@@ -10,7 +10,7 @@ The **Jonabron** Channel provides the following packages:
 - naitre
 - vicinae
 ### Fonts
-- font-bundle-synapsian-karamarea
+- font-jonafonts
 ### Games
 - osu-lazer-bin
 # Usage
