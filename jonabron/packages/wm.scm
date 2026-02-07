@@ -167,7 +167,7 @@
     (source (origin
              (method git-fetch)
              (uri (git-reference
-                   (url "https://github.com/nixpup/NaitreHUD")
+                   (url "https://github.com/librepup/NaitreHUD")
                    (commit commit)))
              (file-name (git-file-name name version))
              (sha256
@@ -219,7 +219,7 @@ DesktopNames=NaitreHUD
                   wlroots
                   scenefx))
     (native-inputs (list pkg-config wayland-protocols))
-    (home-page "https://github.com/nixpup/NaitreHUD")
+    (home-page "https://github.com/librepup/NaitreHUD")
     (synopsis "Wayland Compositor and Window Manager")
     (description "A Wayland compositor based on wlroots and scenefx,
 inspired by dwl but aiming to be more feature-rich.")

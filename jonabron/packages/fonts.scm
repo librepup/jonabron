@@ -19,26 +19,26 @@
   #:use-module (gnu packages gettext)
   #:use-module (gnu packages glib)
   #:use-module (gnu packages pkg-config)
-  #:export (font-bundle-synapsian-karamarea))
+  #:export (font-jonafonts))
 
-(define-public font-bundle-synapsian-karamarea
-  (let ((commit "23bd1cf394b1eb1c64f8d8cd575aa676e55f2fec")
+(define-public font-jonafonts
+  (let ((commit "0a89c6a970802b5fd4a0d9a48f63d86bc97b3268")
         (revision "0"))
     (package
-     (name "font-bundle-synapsian-karamarea")
+     (name "font-jonafonts")
      (version (git-version "1.0" revision commit))
      (source
       (origin
        (uri (git-reference
-             (url "https://github.com/nixpup/fonts")
+             (url "https://github.com/librepup/jonafonts")
              (commit commit)))
        (method git-fetch)
        (sha256
-        (base32 "1yp6nisrs7z2rc6jmr9xr7q1s4q4p7p6ml8cfppgy8z8vzgchxkw"))
+        (base32 "1gslck7nd2cw5bmyh6rsqg40bxxl7mq1xhyjsz1419whaayvrpka"))
        (file-name (git-file-name name version))))
      (outputs '("out" "ttf" "woff"))
      (build-system font-build-system)
-     (home-page "https://github.com/nixpup/fonts")
-     (synopsis "Font Bundle including Synapsian And Karamarea")
-     (description "Font Bundle including the Synapsian Script Font, and the Karamarea Number System Font.")
+     (home-page "https://github.com/librepup/jonafonts")
+     (synopsis "Jonafonts Font Bundle")
+     (description "Jonafonts Font Bundle Including Nerd Font Symbols, Blex Mono Nerd Font, Synapsian Script, Karamarea Number, TempleOS Font, and much more.")
      (license gpl3))))
