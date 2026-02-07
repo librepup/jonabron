@@ -32,11 +32,13 @@
        #~(modify-phases %standard-phases
         (add-after 'install 'install-dictionary
          (lambda* (#:key outputs #:allow-other-keys)
-          (let* ((out (assoc-ref outputs "out"))
-           (site-lisp (string-append out "/share/emacs/site-lisp")))
-            (install-file "hoon-dictionary.json" site-lisp))
-          )))
-       ))
+                  (let* ((out (assoc-ref outputs "out"))
+                         (elpa-name-ver (string-append
+                                         "hoon-mode" "-" #$version))
+                         (site-lisp (string-append out "/share/emacs/site-lisp/" elpa-name-ver)))
+                    (install-file "hoon-dictionary.json" site-lisp))))
+          ))
+       )
      (propagated-inputs
       (list
        )
