@@ -13,6 +13,8 @@ The **Jonabron** Channel provides the following packages:
 - font-jonafonts
 ### Games
 - osu-lazer-bin
+### Communication
+- discord
 # Usage
 Add the **Jonabron** Channel to your Guix `channels.scm`, located at "~/.config/guix/channels.scm":
 ```scm
