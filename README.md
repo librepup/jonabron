@@ -3,18 +3,21 @@
 # Info
 ## Provides
 The **Jonabron** Channel provides the following packages:
-### Emacs
+### Emacs (jonabron packages emacs)
 - emacs-hoon-mode
 - emacs-fancy-dabbrev
-### WM
+### WM (jonabron packages wm)
 - naitre
 - vicinae
-### Fonts
+### Fonts (jonabron packages fonts)
 - font-jonafonts
-### Games
+### Games (jonabron packages games)
 - osu-lazer-bin
-### Communication
+### Communication (jonabron packages communication)
 - discord
+### Shells (jonabron packages shells)
+- oh-my-zsh
+- powerlevel-10k
 # Usage
 Add the **Jonabron** Channel to your Guix `channels.scm`, located at "~/.config/guix/channels.scm":
 ```scm
@@ -39,12 +42,13 @@ Afterwards, run `guix pull` to update Guix and your Channels. Once that is compl
 (define %guix-os (operating-system
   (packages (append
              (map specification->package+output
-                  '("naitre" ; From (jonabron packages wm).
-                    "vicinae" ; From (jonabron packages wm).
-                    "font-jonafonts" ; From (jonabron packages fonts).
-                    "osu-lazer-bin" ; From (jonabron packages games).
-                    "emacs-fancy-dabbrev" ; From (jonabron packages emacs).
-                    "discord" ; From (jonabron packages communication).
+                  '("naitre"
+                    "vicinae"
+                    "font-jonafonts"
+                    "osu-lazer-bin"
+                    "emacs-fancy-dabbrev"
+                    "discord"
+                    "oh-my-zsh"
                     ))
              ))
 ))
