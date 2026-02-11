@@ -1,5 +1,5 @@
 # Jonabron Channel
-![Guix Banner](https://raw.githubusercontent.com/nixpup/jonabron/refs/heads/master/guixBanner.jpg)
+![Guix Banner](https://raw.githubusercontent.com/librepup/jonabron/refs/heads/master/guixBanner.jpg)
 # Info
 ## Provides
 The **Jonabron** Channel provides the following packages:
@@ -18,8 +18,12 @@ The **Jonabron** Channel provides the following packages:
 ### Shells (jonabron packages shells)
 - oh-my-zsh
 - powerlevel-10k
+### Entertainment (jonabron packages entertainment)
+- ani-cli
+- ani-skip
+
 # Usage
-Add the **Jonabron** Channel to your Guix `channels.scm`, located at "~/.config/guix/channels.scm":
+Add the **Jonabron** Channel to your Guix `channels.scm`, located at `~/.config/guix/channels.scm` (and optionally to your `/etc/guix/channels.scm` as well):
 ```scm
 (append (list
  ; ... your other Channels ...
@@ -30,6 +34,7 @@ Add the **Jonabron** Channel to your Guix `channels.scm`, located at "~/.config/
  ; ... your other Channels ...
 ))
 ```
+
 Afterwards, run `guix pull` to update Guix and your Channels. Once that is completed, you should be able to include the Jonabron Channel in your system configuration files, like so:
 ```scm
 (use-modules ; ... your other Modules ...
@@ -37,7 +42,8 @@ Afterwards, run `guix pull` to update Guix and your Channels. Once that is compl
              (jonabron packages fonts)
              (jonabron packages emacs)
              (jonabron packages communication)
-             (jonabron packages games))
+             (jonabron packages games)
+	     (jonabron packages entertainment))
 
 (define %guix-os (operating-system
   (packages (append
@@ -49,7 +55,10 @@ Afterwards, run `guix pull` to update Guix and your Channels. Once that is compl
                     "emacs-fancy-dabbrev"
                     "discord"
                     "oh-my-zsh"
+		    "ani-cli"
                     ))
              ))
 ))
+
+%guix-os
 ```
