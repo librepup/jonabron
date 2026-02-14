@@ -257,7 +257,7 @@ system and/or a game process.")
                                                 (documentation "Run the GameMode daemon.")
                                                 (requirement '(dbus-system user-processes))
                                                 (start #~(make-forkexec-constructor
-                                                           (list #$(file-append package "/bin/gamemoded") "-d")))
+                                                          (list #$(file-append package "/bin/gamemoded"))))
                                                 (stop #~(make-kill-destructor))))))))
                    (default-value gamemode)
                    (description "Set up GameMode D-Bus and Polkit policies, as well as run the GameMode daemon.")
