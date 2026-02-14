@@ -258,6 +258,10 @@ system and/or a game process.")
                                                 (requirement '(dbus-system user-processes))
                                                 (start #~(make-forkexec-constructor
                                                           (list #$(file-append package "/bin/gamemoded"))))
+                                                ; Potential Fix:
+                                                ; #:environment-variables
+                                                ; '("DBUS_SYSTEM_BUS_ADDRESS=unix:path=/var/run/dbus/system_bus_socket")))
+                                                ; Close the (start #~(make block after the DBUS_SYSTEM_BUS_ADDRESS declaration!
                                                 (stop #~(make-kill-destructor))))))))
                    (default-value gamemode)
                    (description "Set up GameMode D-Bus and Polkit policies, as well as run the GameMode daemon.")
