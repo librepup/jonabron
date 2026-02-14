@@ -13,6 +13,8 @@ The **Jonabron** Channel provides the following packages:
 - font-jonafonts
 ### Games (jonabron packages games)
 - osu-lazer-bin
+- gamemode
+- gamemode-service-type **(service)**
 ### Communication (jonabron packages communication)
 - discord
 ### Shells (jonabron packages shells)
