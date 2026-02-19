@@ -23,6 +23,9 @@ The **Jonabron** Channel provides the following packages:
 ### Entertainment (jonabron packages entertainment)
 - ani-cli
 - ani-skip
+- kew
+### AI (jonabron packages ai)
+- claude-code
 
 # Usage
 Add the **Jonabron** Channel to your Guix `channels.scm`, located at `~/.config/guix/channels.scm` (and optionally to your `/etc/guix/channels.scm` as well):
