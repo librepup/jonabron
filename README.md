@@ -28,6 +28,8 @@ The **Jonabron** Channel provides the following packages:
 - kew
 ### Editors (jonabron packages editors)
 - plan9-acme
+### Terminals (jonabrok packages terminals)
+- plan9-term
 ### AI (jonabron packages ai)
 - claude-code
 
@@ -49,6 +51,7 @@ Afterwards, run `guix pull` to update Guix and your Channels. Once that is compl
 (use-modules ; ... your other Modules ...
              (jonabron packages wm)
              (jonabron packages fonts)
+             (jonabron packages terminals)
              (jonabron packages emacs)
              (jonabron packages communication)
              (jonabron packages games)
@@ -66,6 +69,7 @@ Afterwards, run `guix pull` to update Guix and your Channels. Once that is compl
                     "osu-lazer-bin"
                     "plan9-acme"
                     "emacs-fancy-dabbrev"
+                    "plan9-term"
                     "discord"
                     "oh-my-zsh"
                     "ani-cli"
