@@ -9,6 +9,7 @@ The **Jonabron** Channel provides the following packages:
 ### WM (jonabron packages wm)
 - naitre
 - vicinae
+- plan9-rio-session
 ### Fonts (jonabron packages fonts)
 - font-jonafonts
 ### Games (jonabron packages games)
@@ -20,10 +21,13 @@ The **Jonabron** Channel provides the following packages:
 ### Shells (jonabron packages shells)
 - oh-my-zsh
 - powerlevel-10k
+- plan9-rc-shell
 ### Entertainment (jonabron packages entertainment)
 - ani-cli
 - ani-skip
 - kew
+### Editors (jonabron packages editors)
+- plan9-acme
 ### AI (jonabron packages ai)
 - claude-code
 
@@ -48,15 +52,19 @@ Afterwards, run `guix pull` to update Guix and your Channels. Once that is compl
              (jonabron packages emacs)
              (jonabron packages communication)
              (jonabron packages games)
+             (jonabron packages editors)
+             (jonabron packages shells)
              (jonabron packages entertainment))
 
 (define %guix-os (operating-system
   (packages (append
              (map specification->package+output
                   '("naitre"
+                    "plan9-rc-shell"
                     "vicinae"
                     "font-jonafonts"
                     "osu-lazer-bin"
+                    "plan9-acme"
                     "emacs-fancy-dabbrev"
                     "discord"
                     "oh-my-zsh"
