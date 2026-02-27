@@ -229,7 +229,7 @@ inspired by dwl but aiming to be more feature-rich.")
 (define-public plan9-rio-session
   (package
     (name "plan9-rio-session")
-    (version "0.1")
+    (version "0.2")
     (source #f)
     (build-system trivial-build-system)
     (arguments
@@ -239,18 +239,35 @@ inspired by dwl but aiming to be more feature-rich.")
       #~(begin
           (use-modules (guix build utils))
           (let* ((out #$output)
+                 (bin (string-append out "/bin"))
                  (xsessions (string-append out "/share/xsessions"))
-                 (desktop-file (string-append xsessions "/rio.desktop")))
+                 (p9-bin (string-append #$(this-package-input "plan9port") "/bin"))
+                 (start-rio (string-append bin "/start-rio")))
+            (mkdir-p bin)
             (mkdir-p xsessions)
-            (call-with-output-file desktop-file
+            (call-with-output-file start-rio
+              (lambda (port)
+                (format port "#!/bin/sh
+export NAMESPACE=\"/tmp/ns.${USER:-glenda}.${DISPLAY:-:0}\"
+mkdir -p \"$NAMESPACE\"
+chmod 700 \"$NAMESPACE\"
+
+if ~a/9 plumber; then
+  echo \"Plumber started successfully.\"
+else
+  echo \"Plumber failed to start.\" >&2
+fi
+exec ~a/9 rio\n" p9-bin p9-bin)))
+            (chmod start-rio #o555)
+            (call-with-output-file (string-append xsessions "/rio.desktop")
               (lambda (port)
                 (format port
                         "[Desktop Entry]~@
 Name=Rio~@
-Comment=Plan9Port Rio Window Manager~@
-Exec=~a/bin/9 rio~@
+Comment=Rio with Plumber~@
+Exec=~a~@
 Type=Application~%"
-                        #$(this-package-input "plan9port"))))))))
+                        start-rio)))))))
     (inputs
      (list plan9port))
     (synopsis "X11 Session File for the Rio Window Manager")
