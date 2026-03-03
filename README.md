@@ -32,6 +32,9 @@ The **Jonabron** Channel provides the following packages:
 - plan9-term
 ### AI (jonabron packages ai)
 - claude-code
+### Geex (jonabron packages geex)
+- geex-installer
+- geex-bar
 
 # Usage
 Add the **Jonabron** Channel to your Guix `channels.scm`, located at `~/.config/guix/channels.scm` (and optionally to your `/etc/guix/channels.scm` as well):
