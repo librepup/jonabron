@@ -239,6 +239,8 @@ inspired by dwl but aiming to be more feature-rich.")
       #~(begin
           (use-modules (guix build utils))
           (let* ((out #$output)
+                 (bash #$(this-package-input "bash"))
+                 (plan9port #$(this-package-input "plan9port"))
                  (bin (string-append out "/bin"))
                  (xsessions (string-append out "/share/xsessions"))
                  (p9-bin (string-append #$(this-package-input "plan9port") "/bin"))
