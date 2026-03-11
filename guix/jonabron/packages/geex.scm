@@ -27,7 +27,7 @@
 (define-public geex-bar
   (package
    (name "geex-bar")
-   (version "5")
+   (version "6")
    (source #f)
    (build-system trivial-build-system)
    (arguments
