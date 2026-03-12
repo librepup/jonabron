@@ -5,12 +5,12 @@ in
 pkgs.stdenv.mkDerivation rec {
   # Add 'boot.loader.grub.theme = inputs.jonabron.packages.x86_64-linux.dangerousjungle-grub-theme;' to use Theme.
   pname = "dangerousjungle-grub-theme";
-  version = "1.1";
+  version = "1.2";
   src = ./theme;
   installPhase = ''
     runHook preInstall
-    mkdir -p $out/share/grub/themes/${pname}
-    cp -r ./* $out/share/grub/themes/${pname}/
+    mkdir -p $out
+    cp -r ./* $out/
     runHook postInstall
   '';
   meta = with lib; {
