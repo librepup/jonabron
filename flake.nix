@@ -8,15 +8,15 @@
   outputs = inputs@{ self, nixpkgs, ... }:
   let
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
-    gobm = import ./nix/packages/gobm/default.nix { inherit pkgs; };
-    urbit = import ./nix/packages/urbit/default.nix { inherit pkgs; };
-    #otherpkg = import ./nix/packages/otherpkg/default.nix { inherit pkgs; };
+    gobm = pkgs.callPackage ./nix/packages/gobm/default.nix { };
+    urbit = pkgs.callPackage ./nix/packages/urbit/default.nix { };
+    win2ksvg = pkgs.callPackage ./nix/packages/win2ksvg/default.nix { };
   in
   {
     packages.x86_64-linux = {
       gobm = gobm;
       urbit = urbit;
-      #otherpkg = otherpkg;
+      win2ksvg = win2ksvg;
     };
     apps.x86_64-linux = {
       gobm = {
@@ -35,11 +35,11 @@
           mainProgram = "urbit";
         };
       };
-      #otherpkg = { ... };
     };
     overlays.default = final: prev: {
       gobm = gobm;
       urbit = urbit;
+      win2ksvg = win2ksvg;
     };
   };
 }

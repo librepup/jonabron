@@ -39,6 +39,10 @@ The **Jonabron** Channel provides the following packages:
 ### Nix
 #### Gaming Utils
  - gobm
+#### Networks
+ - urbit
+#### Themes
+ - win2ksvg
 
 # Usage
 ## Guix
