@@ -3,6 +3,7 @@ let
   inherit (pkgs) lib;
 in
 pkgs.stdenv.mkDerivation rec {
+  # Add 'boot.loader.grub.theme = inputs.jonabron.packages.x86_64-linux.dangerousjungle-grub-theme;' to use Theme.
   pname = "dangerousjungle-grub-theme";
   version = "1.1";
   src = ./theme;
