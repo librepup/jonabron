@@ -12,6 +12,7 @@ stdenvNoCC.mkDerivation {
   };
   dontBuild = true;
   dontFixup = true;
+  dontUpdateIconCache = true;
   installPhase = ''
     runHook preInstall
     mkdir -p $out/share/icons/WinXPSVG
