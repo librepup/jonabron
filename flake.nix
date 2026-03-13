@@ -9,12 +9,16 @@
     gobm = pkgs.callPackage ./nix/packages/gobm/default.nix { };
     urbit = pkgs.callPackage ./nix/packages/urbit/default.nix { };
     dangerousjungle-grub-theme = pkgs.callPackage ./nix/packages/dangerousjungle-grub-theme/default.nix { };
+    xptheme = pkgs.callPackage ./nix/packages/xptheme/default.nix { };
+    winxp-icons = pkgs.callPackage ./nix/packages/winxp-icons/default.nix { inherit xptheme; };
   in
   {
     packages.x86_64-linux = {
       gobm = gobm;
       urbit = urbit;
       dangerousjungle-grub-theme = dangerousjungle-grub-theme;
+      xptheme = xptheme;
+      winxp-icons = winxp-icons;
     };
     apps.x86_64-linux = {
       gobm = {
@@ -38,6 +42,8 @@
       gobm = gobm;
       urbit = urbit;
       dangerousjungle-grub-theme = dangerousjungle-grub-theme;
+      xptheme = xptheme;
+      winxp-icons = winxp-icons;
     };
   };
 }

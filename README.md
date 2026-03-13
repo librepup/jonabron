@@ -5,44 +5,47 @@
 The **Jonabron** Channel provides the following packages:
 ### Guix
 #### Emacs (jonabron packages emacs)
-- emacs-hoon-mode
-- emacs-fancy-dabbrev
+- emacs-hoon-mode | Hoon Recognition for Emacs
+- emacs-fancy-dabbrev | Simple Auto-Complete
 #### WM (jonabron packages wm)
-- naitre
-- vicinae
-- plan9-rio-session
+- naitre | Wayland WM and Compositor based on MangoWC
+- vicinae | Wayland-Native Application Launcher
+- plan9-rio-session | Session-File for Plan9's Rio
 #### Fonts (jonabron packages fonts)
-- font-jonafonts
+- font-jonafonts | Jonabron Fonts Bundle
 #### Games (jonabron packages games)
-- osu-lazer-bin
-- gamemode
+- osu-lazer-bin | Packaged osu!lazer AppImage
+- gamemode | Game Wrapper
 - gamemode-service-type **(service)**
 #### Communication (jonabron packages communication)
-- discord
+- discord | Chatting Platform
 #### Shells (jonabron packages shells)
-- oh-my-zsh
-- powerlevel-10k
-- plan9-rc-shell
+- oh-my-zsh | ZSH Suite
+- powerlevel-10k | ZSH Theme
+- plan9-rc-shell | Wrapped RC Shell from Plan9
 #### Entertainment (jonabron packages entertainment)
-- ani-cli
-- ani-skip
-- kew
+- ani-cli | Watch Anime in the Terminal
+- ani-skip | Automatically Skip Anime Intros
+- kew | Terminal Music Player
 #### Editors (jonabron packages editors)
-- plan9-acme
+- plan9-acme | Wrapped Plan9 Acme Editor
 #### Terminals (jonabrok packages terminals)
-- plan9-term
+- plan9-term | Wrapped Plan9 9Term Terminal
 #### AI (jonabron packages ai)
-- claude-code
+- claude-code | Anthropic's Claude Coding Agent
 #### Geex (jonabron packages geex)
-- geex-installer
-- geex-bar
+- geex-installer | Interactive Guix Installer
+- geex-bar | Pre-Configured Polybar
 ### Nix
 #### Gaming Utils
- - gobm
+ - gobm | Download osu! Beatmaps from URL
 #### Networks
- - urbit
+ - urbit | Clean Slate OS for the 21st Century
 #### GRUB
- - dangerousjungle-grub-theme
+ - dangerousjungle-grub-theme | GRUB Theme
+#### Icons & GTK Themes
+ - xptheme | Windows XP Themefiles
+ - winxp-icons | Windows XP Icon Theme
 
 # Usage
 ## Guix
