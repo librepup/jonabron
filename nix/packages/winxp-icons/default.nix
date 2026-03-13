@@ -15,11 +15,13 @@ pkgs.stdenv.mkDerivation rec {
     pkgs.gtk3
     pkgs.librsvg
     xptheme
+    pkgs.gnused
   ];
   installPhase = ''
     runHook preInstall
     mkdir -p $out/share/icons/WinXP-Icons
     cp -r ./* $out/share/icons/WinXP-Icons/
+    sed -i '/^Inherits=/d' $out/share/icons/WinXP-Icons/index.theme
     runHook postInstall
   '';
   postInstall = ''
