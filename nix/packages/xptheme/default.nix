@@ -28,8 +28,8 @@ pkgs.stdenv.mkDerivation rec {
     cp -r "./gtk-themes/Windows XP Luna"/* "$out/share/themes/Windows XP Luna"/
     cp -r "./gtk-themes/Office 2007"/* "$out/share/themes/Office 2007"/
 
-    gtk-update-icon-cache --force $out/share/icons/w2k-bibo
-    gtk-update-icon-cache --force $out/share/icons/Classic95
+    gtk-update-icon-cache --force $out/share/icons/w2k-bibo 2>&1 || true
+    gtk-update-icon-cache --force $out/share/icons/Classic95 2>&1 || true
 
     runHook postInstall
   '';
