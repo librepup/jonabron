@@ -5,7 +5,11 @@
   };
   outputs = inputs@{ self, nixpkgs, ... }:
   let
-    pkgs = nixpkgs.legacyPackages.x86_64-linux;
+    config = { allowUnfree = true; };
+    pkgs = import nixpkgs {
+      system = "x86_64-linux";
+      inherit config;
+    };
     gobm = pkgs.callPackage ./nix/packages/gobm/default.nix { };
     urbit = pkgs.callPackage ./nix/packages/urbit/default.nix { };
     dangerousjungle-grub-theme = pkgs.callPackage ./nix/packages/dangerousjungle-grub-theme/default.nix { };
