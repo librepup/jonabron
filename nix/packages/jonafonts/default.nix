@@ -11,26 +11,26 @@ rec {
     '';
   };
   synapsian = mkFont {
-    name = "synapsian";
+    name = "jonafonts-synapsian";
     files = [
       "synapsian.ttf"
     ];
   };
   karamarea = mkFont {
-    name = "karamarea";
+    name = "jonafonts-karamarea";
     files = [
       "Karamarea-Bold.ttf"
       "Karamarea-SimpleHex.ttf"
     ];
   };
   templeos = mkFont {
-    name = "templeos";
+    name = "jonafonts-templeos";
     files = [
       "templeos_font.ttf"
     ];
   };
   icons = mkFont {
-    name = "icons";
+    name = "jonafonts-icons";
     files = [
       "weathericons.ttf"
       "SymbolsNerdFontMono-Regular.ttf"
@@ -43,13 +43,13 @@ rec {
     ];
   };
   lucidabright = mkFont {
-    name = "lucidabright";
+    name = "jonafonts-lucidabright";
     files = [
       "lucida-bright.ttf"
     ];
   };
   blexmono = mkFont {
-    name = "blexmono";
+    name = "jonafonts-blexmono";
     files = [
       "BlexMonoNerdFont-Bold.ttf"
       "BlexMonoNerdFont-BoldItalic.ttf"
@@ -102,7 +102,7 @@ rec {
     ];
   };
   all = pkgs.symlinkJoin {
-    name = "all";
+    name = "jonafonts-all";
     paths = [ synapsian karamarea templeos icons lucidabright blexmono ];
   };
   default = all;
