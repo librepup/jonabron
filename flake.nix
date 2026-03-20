@@ -21,6 +21,7 @@
     osu-lazer-appimage = pkgs.callPackage ./nix/packages/osu-lazer-appimage/default.nix { };
     gnutypewriter-font = pkgs.callPackage ./nix/packages/gnutypewriter-font/default.nix { };
     jonafonts = pkgs.callPackage ./nix/packages/jonafonts/default.nix { };
+    jonabar = pkgs.callPackage ./nix/packages/jonabar/default.nix { jonafonts = jonafonts.all; };
   in
   {
     packages.x86_64-linux = {
@@ -35,6 +36,7 @@
       osu-lazer-appimage = osu-lazer-appimage;
       gnutypewriter-font = gnutypewriter-font;
       jonafonts = jonafonts;
+      jonabar = jonabar;
     };
     apps.x86_64-linux = {
       gobm = {
@@ -77,6 +79,14 @@
           mainProgram = "osu!";
         };
       };
+      jonabar = {
+        type = "app";
+        program = "${jonabar}/bin/jonabar";
+        meta = {
+          description = "Customized Polybar Wrapper";
+          mainProgram = "jonabar";
+        };
+      };
     };
     overlays.default = final: prev: {
       gobm = gobm;
@@ -90,6 +100,7 @@
       osu-lazer-appimage = osu-lazer-appimage;
       gnutypewriter-font = gnutypewriter-font;
       jonafonts = jonafonts;
+      jonabar = jonabar;
     };
   };
 }
