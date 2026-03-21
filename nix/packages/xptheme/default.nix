@@ -16,6 +16,7 @@ pkgs.stdenv.mkDerivation rec {
   ];
   installPhase = ''
     runHook preInstall
+
     mkdir -p $out/share/icons/CinnXP
     mkdir -p $out/share/icons/Classic95
     mkdir -p $out/share/icons/w2k-bibo
@@ -27,9 +28,6 @@ pkgs.stdenv.mkDerivation rec {
     mkdir -p "$out/share/themes/Office 2007"
     cp -r "./gtk-themes/Windows XP Luna"/* "$out/share/themes/Windows XP Luna"/
     cp -r "./gtk-themes/Office 2007"/* "$out/share/themes/Office 2007"/
-
-    gtk-update-icon-cache --force $out/share/icons/w2k-bibo 2>&1 || true
-    gtk-update-icon-cache --force $out/share/icons/Classic95 2>&1 || true
 
     runHook postInstall
   '';

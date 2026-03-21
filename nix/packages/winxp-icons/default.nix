@@ -17,18 +17,11 @@ pkgs.stdenv.mkDerivation rec {
     xptheme
     pkgs.gnused
   ];
-  # Optional: Remove Inherits Option
-  # sed -i '/^Inherits=/d' $out/share/icons/WinXP-Icons/index.theme
   installPhase = ''
     runHook preInstall
     mkdir -p $out/share/icons/WinXP-Icons
     cp -r ./* $out/share/icons/WinXP-Icons/
     runHook postInstall
-  '';
-  postInstall = ''
-    XDG_DATA_DIRS="${xptheme}/share:${pkgs.hicolor-icon-theme}/share" \
-    GDK_PIXBUF_MODULE_FILE="$(echo ${pkgs.librsvg}/lib/gdk-pixbuf-2.0/*/loaders.cache)" \
-      gtk-update-icon-cache --force --ignore-theme-index -v $out/share/icons/WinXP-Icons 2>&1 || true
   '';
   propagatedBuildInputs = [
     pkgs.hicolor-icon-theme
