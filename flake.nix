@@ -23,6 +23,8 @@
     jonafonts = pkgs.callPackage ./nix/packages/jonafonts/default.nix { };
     jonabar = pkgs.callPackage ./nix/packages/jonabar/default.nix { jonafonts = jonafonts.all; };
     diinki-aero = pkgs.callPackage ./nix/packages/diinki-aero/default.nix { };
+    windows-vista-theme = pkgs.callPackage ./nix/packages/windows-vista-theme/default.nix { };
+    revista = pkgs.callPackage ./nix/packages/revista/default.nix { };
   in
   {
     packages.x86_64-linux = {
@@ -39,6 +41,8 @@
       jonafonts = jonafonts;
       jonabar = jonabar;
       diinki-aero = diinki-aero;
+      windows-vista-theme = windows-vista-theme;
+      revista = revista;
     };
     apps.x86_64-linux = {
       gobm = {
@@ -104,6 +108,8 @@
       jonafonts = jonafonts;
       jonabar = jonabar;
       diinki-aero = diinki-aero;
+      windows-vista-theme = windows-vista-theme;
+      revista = revista;
     };
   };
 }
