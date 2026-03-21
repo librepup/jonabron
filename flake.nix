@@ -22,6 +22,7 @@
     gnutypewriter-font = pkgs.callPackage ./nix/packages/gnutypewriter-font/default.nix { };
     jonafonts = pkgs.callPackage ./nix/packages/jonafonts/default.nix { };
     jonabar = pkgs.callPackage ./nix/packages/jonabar/default.nix { jonafonts = jonafonts.all; };
+    diinki-aero = pkgs.callPackage ./nix/packages/diinki-aero/default.nix { };
   in
   {
     packages.x86_64-linux = {
@@ -37,6 +38,7 @@
       gnutypewriter-font = gnutypewriter-font;
       jonafonts = jonafonts;
       jonabar = jonabar;
+      diinki-aero = diinki-aero;
     };
     apps.x86_64-linux = {
       gobm = {
@@ -101,6 +103,7 @@
       gnutypewriter-font = gnutypewriter-font;
       jonafonts = jonafonts;
       jonabar = jonabar;
+      diinki-aero = diinki-aero;
     };
   };
 }

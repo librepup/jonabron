@@ -3,17 +3,50 @@ rec {
   mkFont = { name, files }: pkgs.stdenv.mkDerivation {
     inherit name;
     version = "1.0";
-    src = ./files;
+    src = builtins.path {
+      path = ./files;
+      name = "${name}-src";
+      filter = (path: type:
+        let
+          filename = baseNameOf path;
+        in
+          builtins.elem filename files
+      );
+    };
+    meta = with pkgs.lib; {
+      description = "Jonafonts Bundles";
+      homepage = "https://github.com/librepup/jonabron";
+      maintainers = [ maintainers.librepup ];
+      license = licenses.gpl3Plus;
+    };
     dontBuild = true;
     installPhase = ''
-      mkdir -p $out/share/fonts/truetype
-      ${builtins.concatStringsSep "\n" (map (f: "cp -v ${f} $out/share/fonts/truetype/ 2>/dev/null || true") files)}
+      mkdir -p $out/share/fonts/{truetype,opentype,woff2,other}
+      for f in *; do
+        if [ -f "$f" ]; then
+          if [[ "$f" == *.otf ]]; then
+            cp -v "$f" $out/share/fonts/opentype/
+          elif [[ "$f" == *.ttf ]]; then
+            cp -v "$f" $out/share/fonts/truetype/
+          elif [[ "$f" == *.woff2 ]]; then
+            cp -v "$f" $out/share/fonts/woff2/
+          else
+            cp -v "$f" $out/share/fonts/other/
+          fi
+        fi
+      done
     '';
   };
   synapsian = mkFont {
     name = "jonafonts-synapsian";
     files = [
       "synapsian.ttf"
+    ];
+  };
+  joglobal = mkFont {
+    name = "jonafonts-joglobal";
+    files = [
+      "Joglobal.ttf"
     ];
   };
   karamarea = mkFont {
@@ -40,6 +73,12 @@ rec {
       "fontawesome.ttf"
       "file-icons.ttf"
       "all-the-icons.ttf"
+    ];
+  };
+  w95fa = mkFont {
+    name = "jonafonts-w95fa";
+    files = [
+      "W95FA.otf"
     ];
   };
   lucidabright = mkFont {
@@ -103,7 +142,7 @@ rec {
   };
   all = pkgs.symlinkJoin {
     name = "jonafonts-all";
-    paths = [ synapsian karamarea templeos icons lucidabright blexmono ];
+    paths = [ synapsian karamarea templeos icons lucidabright blexmono w95fa joglobal ];
   };
   default = all;
 }

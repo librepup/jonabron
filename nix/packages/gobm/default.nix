@@ -5,19 +5,14 @@ let
 in
 pkgs.stdenv.mkDerivation {
   pname = "gobm";
-  version = "1.0";
-
-  src = ./.; # Assumes gobm.scm is in the same directory as default.nix
-
+  version = "1.1";
+  src = ./.;
   buildInputs = [
     pkgs.guile
     pkgs.curl
     pkgs.guile-json
   ];
-
-  # We don't need to "build" anything, just copy the script
   dontBuild = true;
-
   installPhase = ''
     mkdir -p $out/bin
 
