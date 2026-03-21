@@ -19,8 +19,12 @@ pkgs.stdenv.mkDerivation rec {
   ];
   installPhase = ''
     runHook preInstall
-    mkdir -p $out/share/icons/WinXP-Icons
-    cp -r ./* $out/share/icons/WinXP-Icons/
+
+    mkdir -p $out/share/icons/WinXP
+    cp -r . $out/share/icons/WinXP/
+    rm -f $out/share/icons/WinXP/README.md
+    rm -rf $out/share/icons/WinXP/.git
+
     runHook postInstall
   '';
   propagatedBuildInputs = [
