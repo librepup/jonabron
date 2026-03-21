@@ -25,6 +25,7 @@
     diinki-aero = pkgs.callPackage ./nix/packages/diinki-aero/default.nix { };
     windows-vista-theme = pkgs.callPackage ./nix/packages/windows-vista-theme/default.nix { };
     revista = pkgs.callPackage ./nix/packages/revista/default.nix { };
+    windows-xp-theme = pkgs.callPackage ./nix/packages/windows-xp-theme/default.nix { };
   in
   {
     packages.x86_64-linux = {
@@ -43,6 +44,7 @@
       diinki-aero = diinki-aero;
       windows-vista-theme = windows-vista-theme;
       revista = revista;
+      windows-xp-theme = windows-xp-theme;
     };
     apps.x86_64-linux = {
       gobm = {
@@ -110,6 +112,7 @@
       diinki-aero = diinki-aero;
       windows-vista-theme = windows-vista-theme;
       revista = revista;
+      windows-xp-theme = windows-xp-theme;
     };
   };
 }
