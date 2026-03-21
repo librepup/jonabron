@@ -30,6 +30,10 @@ pkgs.stdenv.mkDerivation rec {
 
     sed -i 's/^Inherits=.*/Inherits=hicolor,Adwaita/' $out/share/icons/w2k-bibo/index.theme
 
+    touch $out/share/icons/CinnXP/icon-theme.cache
+    touch $out/share/icons/Classic95/icon-theme.cache
+    touch $out/share/icons/w2k-bibo/icon-theme.cache
+
     runHook postInstall
   '';
   propagatedBuildInputs = [

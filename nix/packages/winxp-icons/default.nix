@@ -21,10 +21,14 @@ pkgs.stdenv.mkDerivation rec {
     runHook preInstall
 
     mkdir -p $out/share/icons/WinXP
-    cp -r . $out/share/icons/WinXP/
+    cp -r ./* $out/share/icons/WinXP/
+
     sed -i 's/^Inherits=.*/Inherits=hicolor,Adwaita/' $out/share/icons/WinXP/index.theme
+
     rm -f $out/share/icons/WinXP/README.md
     rm -rf $out/share/icons/WinXP/.git
+
+    touch $out/share/icons/WinXP/icon-theme.cache
 
     runHook postInstall
   '';
