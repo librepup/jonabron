@@ -13,6 +13,7 @@ pkgs.stdenv.mkDerivation rec {
   dontDropIconThemeCache = true;
   nativeBuildInputs = [
     pkgs.gtk3
+    pkgs.xcursorgen
   ];
   installPhase = ''
     runHook preInstall
@@ -25,9 +26,9 @@ pkgs.stdenv.mkDerivation rec {
     cp -r ./icons/w2k-bibo/* $out/share/icons/w2k-bibo/
 
     mkdir -p "$out/share/themes/Windows XP Luna"
-    mkdir -p "$out/share/themes/Office 2007"
     cp -r "./gtk-themes/Windows XP Luna"/* "$out/share/themes/Windows XP Luna"/
-    cp -r "./gtk-themes/Office 2007"/* "$out/share/themes/Office 2007"/
+
+    sed -i 's/^Inherits=.*/Inherits=hicolor,Adwaita/' $out/share/icons/w2k-bibo/index.theme
 
     runHook postInstall
   '';

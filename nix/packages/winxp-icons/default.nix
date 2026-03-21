@@ -22,6 +22,7 @@ pkgs.stdenv.mkDerivation rec {
 
     mkdir -p $out/share/icons/WinXP
     cp -r . $out/share/icons/WinXP/
+    sed -i 's/^Inherits=.*/Inherits=hicolor,Adwaita/' $out/share/icons/WinXP/index.theme
     rm -f $out/share/icons/WinXP/README.md
     rm -rf $out/share/icons/WinXP/.git
 
