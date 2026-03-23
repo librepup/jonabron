@@ -26,6 +26,7 @@
     windows-vista-theme = pkgs.callPackage ./nix/packages/windows-vista-theme/default.nix { };
     revista = pkgs.callPackage ./nix/packages/revista/default.nix { };
     windows-xp-theme = pkgs.callPackage ./nix/packages/windows-xp-theme/default.nix { };
+    aeroshell-desktop = (pkgs.callPackage ./nix/packages/aeroshell/default.nix {  }).aeroshell-desktop;
   in
   {
     packages.x86_64-linux = {
@@ -45,6 +46,7 @@
       windows-vista-theme = windows-vista-theme;
       revista = revista;
       windows-xp-theme = windows-xp-theme;
+      aeroshell-desktop = aeroshell-desktop;
     };
     apps.x86_64-linux = {
       gobm = {
@@ -113,6 +115,7 @@
       windows-vista-theme = windows-vista-theme;
       revista = revista;
       windows-xp-theme = windows-xp-theme;
+      aeroshell-desktop = aeroshell-desktop;
     };
   };
 }
