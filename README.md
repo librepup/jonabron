@@ -4,6 +4,8 @@
 ## Provides
 The **Jonabron** Channel provides the following packages:
 ### Guix
+<details>
+<summary>Package List</summary>
 #### Emacs (jonabron packages emacs)
 - emacs-hoon-mode | Hoon Recognition for Emacs
 - emacs-fancy-dabbrev | Simple Auto-Complete
@@ -36,7 +38,11 @@ The **Jonabron** Channel provides the following packages:
 #### Geex (jonabron packages geex)
 - geex-installer | Interactive Guix Installer
 - geex-bar | Pre-Configured Polybar
+</details>
+
 ### Nix
+<details>
+<summary>Package List</summary>
 #### Gaming Utils
  - gobm | Download osu! Beatmaps from URL
 #### Networks
@@ -46,8 +52,14 @@ The **Jonabron** Channel provides the following packages:
 #### Icons & GTK Themes
  - xptheme | Windows XP Themefiles
  - winxp-icons | Windows XP Icon Theme
+ - windows-xp-theme | Windows XP Theme
+ - revista | Windows Vista Theme
+ - windows-vista-theme | Another Windows Vista Theme
+ - diinki-aero | Diinki's Aero Theme
+ - aeroshell-desktop | KDE Plasma Windows Aero Theme
 #### Other
  - momoisay | Animated and Talking Sabai Momoi from Blue Archive
+ - jonabar | Pre-Configured Polybar Setup
 #### Games
  - osu-lazer-appimage | Latest Version of the osu!lazer AppImage
 #### Fonts
@@ -62,6 +74,7 @@ The **Jonabron** Channel provides the following packages:
      - lucidabright
      - blexmono
      - all (Install All Available Jonafonts)
+</details>
 
 # Usage
 ## Guix
