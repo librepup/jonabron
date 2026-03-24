@@ -27,6 +27,7 @@
     revista = pkgs.callPackage ./nix/packages/revista/default.nix { };
     windows-xp-theme = pkgs.callPackage ./nix/packages/windows-xp-theme/default.nix { };
     aeroshell-desktop = (pkgs.callPackage ./nix/packages/aeroshell/default.nix {  }).aeroshell-desktop;
+    keyboard-layout-exporter = pkgs.callPackage ./nix/packages/keyboard-layout-exporter/default.nix { };
   in
   {
     packages.x86_64-linux = {
@@ -47,6 +48,7 @@
       revista = revista;
       windows-xp-theme = windows-xp-theme;
       aeroshell-desktop = aeroshell-desktop;
+      keyboard-layout-exporter = keyboard-layout-exporter;
     };
     apps.x86_64-linux = {
       gobm = {
@@ -97,6 +99,14 @@
           mainProgram = "jonabar";
         };
       };
+      keyboard-layout-exporter = {
+        type = "app";
+        program = "${keyboard-layout-exporter}/bin/keyboard-layout-exporter";
+        meta = {
+          description = "Export Current Keyboard Layout and Maps as Image.";
+          mainProgram = "keyboard-layout-exporter";
+        };
+      };
     };
     overlays.default = final: prev: {
       gobm = gobm;
@@ -116,6 +126,7 @@
       revista = revista;
       windows-xp-theme = windows-xp-theme;
       aeroshell-desktop = aeroshell-desktop;
+      keyboard-layout-exporter = keyboard-layout-exporter;
     };
   };
 }
