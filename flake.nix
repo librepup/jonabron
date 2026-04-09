@@ -28,6 +28,7 @@
     windows-xp-theme = pkgs.callPackage ./nix/packages/windows-xp-theme/default.nix { };
     aeroshell-desktop = (pkgs.callPackage ./nix/packages/aeroshell/default.nix {  }).aeroshell-desktop;
     keyboard-layout-exporter = pkgs.callPackage ./nix/packages/keyboard-layout-exporter/default.nix { };
+    notitg = pkgs.callPackage ./nix/packages/notitg/default.nix { };
   in
   {
     packages.x86_64-linux = {
@@ -49,6 +50,7 @@
       windows-xp-theme = windows-xp-theme;
       aeroshell-desktop = aeroshell-desktop;
       keyboard-layout-exporter = keyboard-layout-exporter;
+      notitg = notitg;
     };
     apps.x86_64-linux = {
       gobm = {
@@ -65,6 +67,14 @@
         meta = {
           description = "A clean-slate OS and network for the 21st century.";
           mainProgram = "urbit";
+        };
+      };
+      notitg = {
+        type = "app";
+        program = "${notitg}/bin/notitg";
+        meta = {
+          description = "NotITG Rhythm Game";
+          mainProgram = "notitg";
         };
       };
       momoisay = {
@@ -111,6 +121,7 @@
     overlays.default = final: prev: {
       gobm = gobm;
       urbit = urbit;
+      notitg = notitg;
       dangerousjungle-grub-theme = dangerousjungle-grub-theme;
       xptheme = xptheme;
       winxp-icons = winxp-icons;
