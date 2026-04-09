@@ -4,7 +4,7 @@ pkgs.stdenv.mkDerivation rec {
   version = "4.9.1";
   src = pkgs.fetchurl {
     url = "https://cloud.noti.tg/QuickStart-v4.9.1.zip";
-    sha256 = pkgs.lib.fakeSha256;
+    sha256 = "sha256-Te5YFPJ5sEP3AvTKFKX3PC7IvCqX1dfxhJwBfA37oY8=";
   };
   nativeBuildInputs = with pkgs; [
     unzip
@@ -13,6 +13,7 @@ pkgs.stdenv.mkDerivation rec {
     wineWowPackages.yabridge
   ];
   unpackPhase = ''
+    mkdir -p $out/share/notitg
     unzip $src -d $out/share/notitg
   '';
   installPhase = ''
