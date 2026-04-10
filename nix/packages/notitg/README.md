@@ -13,6 +13,7 @@ users.users.<USERNAME> = {
   ];
   # ...
 };
+# ...
 ```
 
 You can add the two packages, `wineWowPackages.yabridge` and `(pkgs.callPackage "${inputs.jonabron}/nix/packages/notitg/default.nix" { })` to your system packages, user packages, or home packages (if you pass the inputs through).
