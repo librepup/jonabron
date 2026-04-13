@@ -29,6 +29,7 @@
     aeroshell-desktop = (pkgs.callPackage ./nix/packages/aeroshell/default.nix {  }).aeroshell-desktop;
     keyboard-layout-exporter = pkgs.callPackage ./nix/packages/keyboard-layout-exporter/default.nix { };
     notitg = pkgs.callPackage ./nix/packages/notitg/default.nix { };
+    image-text-extractor = pkgs.callPackage ./nix/packages/image-text-extractor/default.nix { };
   in
   {
     packages.x86_64-linux = {
@@ -51,6 +52,7 @@
       aeroshell-desktop = aeroshell-desktop;
       keyboard-layout-exporter = keyboard-layout-exporter;
       notitg = notitg;
+      image-text-extractor = image-text-extractor;
     };
     apps.x86_64-linux = {
       gobm = {
@@ -83,6 +85,14 @@
         meta = {
           description = "A CLI program written in C featuring talking Saiba Momoi from Blue Archive";
           mainProgram = "momoisay";
+        };
+      };
+      image-text-extractor = {
+        type = "app";
+        program = "${image-text-extractor}/bin/image-text-extractor";
+        meta = {
+          description = "Script for Extracting Text from Images";
+          mainProgram = "image-text-extractor";
         };
       };
       epdfinfo = {
@@ -138,6 +148,7 @@
       windows-xp-theme = windows-xp-theme;
       aeroshell-desktop = aeroshell-desktop;
       keyboard-layout-exporter = keyboard-layout-exporter;
+      image-text-extractor = image-text-extractor;
     };
   };
 }
