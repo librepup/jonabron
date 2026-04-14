@@ -37,6 +37,7 @@ The **Jonabron** Channel provides the following packages:
 ### Nix
 #### Gaming Utils
  - gobm | Download osu! Beatmaps from URL
+ - arrowvortex | StepMania and osu! Charting Software Wine Wrapper
 #### Networks
  - urbit | Clean Slate OS for the 21st Century
 #### GRUB
@@ -54,6 +55,7 @@ The **Jonabron** Channel provides the following packages:
  - jonabar | Pre-Configured Polybar Setup
 #### Games
  - osu-lazer-appimage | Latest Version of the osu!lazer AppImage
+ - notitg | Not In-The-Groove Wine Wrapper
 #### Fonts
  - cartographcf-font | CartographCF Font
  - gnutypewriter-font | GNU Typewriter Font

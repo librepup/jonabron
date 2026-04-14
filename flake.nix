@@ -29,6 +29,7 @@
     aeroshell-desktop = (pkgs.callPackage ./nix/packages/aeroshell/default.nix {  }).aeroshell-desktop;
     keyboard-layout-exporter = pkgs.callPackage ./nix/packages/keyboard-layout-exporter/default.nix { };
     notitg = pkgs.callPackage ./nix/packages/notitg/default.nix { };
+    arrowvortex = pkgs.callPackage ./nix/packages/arrowvortex/default.nix { };
     image-text-extractor = pkgs.callPackage ./nix/packages/image-text-extractor/default.nix { };
   in
   {
@@ -53,6 +54,7 @@
       keyboard-layout-exporter = keyboard-layout-exporter;
       notitg = notitg;
       image-text-extractor = image-text-extractor;
+      arrowvortex = arrowvortex;
     };
     apps.x86_64-linux = {
       gobm = {
@@ -85,6 +87,14 @@
         meta = {
           description = "A CLI program written in C featuring talking Saiba Momoi from Blue Archive";
           mainProgram = "momoisay";
+        };
+      };
+      arrowvortex = {
+        type = "app";
+        program = "${arrowvortex}/bin/arrowvortex";
+        meta = {
+          description = "ArrowVortex Chart Editor for StepMania, osu!, (Not)ITG, and More!";
+          mainProgram = "arrowvortex";
         };
       };
       image-text-extractor = {
@@ -149,6 +159,7 @@
       aeroshell-desktop = aeroshell-desktop;
       keyboard-layout-exporter = keyboard-layout-exporter;
       image-text-extractor = image-text-extractor;
+      arrowvortex = arrowvortex;
     };
   };
 }
