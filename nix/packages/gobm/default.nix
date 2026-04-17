@@ -8,6 +8,10 @@ pkgs.stdenv.mkDerivation {
   version = "1.1";
   src = ./.;
   buildInputs = [
+    (pkgs.haskellPackages.ghcWithPackages (ps: with ps; [
+      aeson
+      regex-tdfa
+    ]))
     pkgs.guile
     pkgs.curl
     pkgs.guile-json
@@ -19,6 +23,13 @@ pkgs.stdenv.mkDerivation {
     # Copy script to $out/share so the binary can find it
     mkdir -p $out/share/gobm
     cp gobm.scm $out/share/gobm/gobm.scm
+    cp Main.hs $out/share/gobm/Main.hs
+
+    # Haskell Compilation
+    cd $out/share/gobm
+    ghc -o hgobm Main.hs
+    mv $out/share/gobm/hgobm $out/bin/hgobm
+    chmod +x $out/bin/hgobm
 
     # Create the wrapper script
     # We set GUILE_LOAD_PATH to include the path where guile-json is installed
