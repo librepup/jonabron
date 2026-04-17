@@ -32,6 +32,7 @@ stdenv.mkDerivation {
     cp ${./files/config.ini} $out/etc/config.ini
     cp ${./files/tray.ini} $out/etc/tray.ini
     cp ${./files/gigi.ini} $out/etc/gigi.ini
+    cp ${./files/mori.ini} $out/etc/mori.ini
 
     # Improved Toggle Tray Script
     cat <<EOF > $out/bin/jonabar-toggle-tray
@@ -89,7 +90,26 @@ else
 fi
 EOF
 
-    chmod +x $out/bin/jonabar $out/bin/jonabar-toggle-tray $out/bin/jonabar-gigi
+    cat <<EOF > $out/bin/jonabar-mori
+#!/usr/bin/env bash
+export LC_ALL="de_DE.UTF-8"
+export LANG="de_DE.UTF-8"
+export XDG_DATA_DIRS="${jonafonts}/share:\$XDG_DATA_DIRS"
+
+# Kill ALL polybar instances to clear tray selection locks
+pkill -9 polybar || true
+
+if command -v xrandr > /dev/null; then
+  for m in \$(xrandr --query | grep " connected" | cut -d" " -f1); do
+    echo "Launching bar on monitor: \$m"
+    MONITOR=\$m polybar --config="$out/etc/mori.ini" --reload main &
+  done
+else
+  polybar --config="$out/etc/mori.ini" --reload main &
+fi
+EOF
+
+    chmod +x $out/bin/jonabar $out/bin/jonabar-toggle-tray $out/bin/jonabar-gigi $out/bin/jonabar-mori
   '';
 
   postFixup = ''
