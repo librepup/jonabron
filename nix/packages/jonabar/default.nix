@@ -1,7 +1,7 @@
 { lib
 , stdenv
 , makeWrapper
-, polybarFull # Use polybarFull to ensure PulseAudio/i3/etc. support is compiled in
+, polybarFull
 , kitty
 , xorg
 , gnugrep
@@ -20,7 +20,7 @@
 
 stdenv.mkDerivation {
   pname = "jonabar";
-  version = "1.1";
+  version = "1.2";
 
   phases = [ "installPhase" "fixupPhase" ];
 
@@ -35,6 +35,7 @@ stdenv.mkDerivation {
     cp ${./files/mori.ini} $out/etc/mori.ini
     cp ${./files/elXoX.ini} $out/etc/elxox.ini
     cp ${./files/camila.ini} $out/etc/camila.ini
+    cp ${./files/nihmune.ini} $out/etc/nihmune.ini
 
     # Improved Toggle Tray Script
     cat <<EOF > $out/bin/jonabar-toggle-tray
@@ -149,7 +150,26 @@ else
 fi
 EOF
 
-    chmod +x $out/bin/jonabar $out/bin/jonabar-toggle-tray $out/bin/jonabar-gigi $out/bin/jonabar-mori $out/bin/jonabar-elxox $out/bin/jonabar-camila
+    cat <<EOF > $out/bin/jonabar-numi
+#!/usr/bin/env bash
+export LC_ALL="de_DE.UTF-8"
+export LANG="de_DE.UTF-8"
+export XDG_DATA_DIRS="${jonafonts}/share:\$XDG_DATA_DIRS"
+
+# Kill ALL polybar instances to clear tray selection locks
+pkill -9 polybar || true
+
+if command -v xrandr > /dev/null; then
+  for m in \$(xrandr --query | grep " connected" | cut -d" " -f1); do
+    echo "Launching bar on monitor: \$m"
+    MONITOR=\$m polybar --config="$out/etc/nihmune.ini" --reload main &
+  done
+else
+  polybar --config="$out/etc/nihmune.ini" --reload main &
+fi
+EOF
+
+    chmod +x $out/bin/jonabar $out/bin/jonabar-toggle-tray $out/bin/jonabar-gigi $out/bin/jonabar-mori $out/bin/jonabar-elxox $out/bin/jonabar-camila $out/bin/jonabar-numi
   '';
 
   postFixup = ''
