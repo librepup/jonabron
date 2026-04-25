@@ -13,6 +13,7 @@
     gobm = pkgs.callPackage ./nix/packages/gobm/default.nix { };
     urbit = pkgs.callPackage ./nix/packages/urbit/default.nix { };
     dangerousjungle-grub-theme = pkgs.callPackage ./nix/packages/dangerousjungle-grub-theme/default.nix { };
+    milk-grub-theme = pkgs.callPackage ./nix/packages/milk-grub-theme/default.nix { };
     xptheme = pkgs.callPackage ./nix/packages/xptheme/default.nix { };
     winxp-icons = pkgs.callPackage ./nix/packages/winxp-icons/default.nix { inherit xptheme; };
     momoisay = pkgs.callPackage ./nix/packages/momoisay/default.nix { };
@@ -57,6 +58,7 @@
       image-text-extractor = image-text-extractor;
       arrowvortex = arrowvortex;
       pybrowse = pybrowse;
+      milk-grub-theme = milk-grub-theme;
     };
     apps.x86_64-linux = {
       gobm = {
@@ -171,6 +173,7 @@
       image-text-extractor = image-text-extractor;
       arrowvortex = arrowvortex;
       pybrowse = pybrowse;
+      milk-grub-theme = milk-grub-theme;
     };
   };
 }
