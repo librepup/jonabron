@@ -31,6 +31,7 @@
     notitg = pkgs.callPackage ./nix/packages/notitg/default.nix { };
     arrowvortex = pkgs.callPackage ./nix/packages/arrowvortex/default.nix { };
     image-text-extractor = pkgs.callPackage ./nix/packages/image-text-extractor/default.nix { };
+    pybrowse = pkgs.callPackage ./nix/packages/pybrowse/default.nix { };
   in
   {
     packages.x86_64-linux = {
@@ -55,6 +56,7 @@
       notitg = notitg;
       image-text-extractor = image-text-extractor;
       arrowvortex = arrowvortex;
+      pybrowse = pybrowse;
     };
     apps.x86_64-linux = {
       gobm = {
@@ -95,6 +97,14 @@
         meta = {
           description = "ArrowVortex Chart Editor for StepMania, osu!, (Not)ITG, and More!";
           mainProgram = "arrowvortex";
+        };
+      };
+      pybrowse = {
+        type = "app";
+        program = "${pybrowse}/bin/pybrowse";
+        meta = {
+          description = "Browser Selection Utility for Opening URLs.";
+          mainProgram = "pybrowse";
         };
       };
       image-text-extractor = {
@@ -160,6 +170,7 @@
       keyboard-layout-exporter = keyboard-layout-exporter;
       image-text-extractor = image-text-extractor;
       arrowvortex = arrowvortex;
+      pybrowse = pybrowse;
     };
   };
 }
