@@ -33,6 +33,7 @@
     arrowvortex = pkgs.callPackage ./nix/packages/arrowvortex/default.nix { };
     image-text-extractor = pkgs.callPackage ./nix/packages/image-text-extractor/default.nix { };
     pybrowse = pkgs.callPackage ./nix/packages/pybrowse/default.nix { };
+    gamemode-manager = pkgs.callPackage ./nix/packages/gamemode-manager/default.nix { };
   in
   {
     packages.x86_64-linux = {
@@ -59,6 +60,7 @@
       arrowvortex = arrowvortex;
       pybrowse = pybrowse;
       milk-grub-theme = milk-grub-theme;
+      gamemode-manager = gamemode-manager;
     };
     apps.x86_64-linux = {
       gobm = {
@@ -67,6 +69,14 @@
         meta = {
           description = "Download osu! Beatmaps from a URL";
           mainProgram = "gobm";
+        };
+      };
+      gamemode-manager = {
+        type = "app";
+        program = "${gamemode-manager}/bin/gamemode-manager";
+        meta = {
+          description = "Graphical User Interface to Manage GameMode Services.";
+          mainProgram = "gamemode-manager";
         };
       };
       urbit = {
@@ -174,6 +184,7 @@
       arrowvortex = arrowvortex;
       pybrowse = pybrowse;
       milk-grub-theme = milk-grub-theme;
+      gamemode-manager = gamemode-manager;
     };
   };
 }
