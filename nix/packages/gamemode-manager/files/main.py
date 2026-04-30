@@ -118,6 +118,7 @@ class GameModeManager(Gtk.Window):
 
         response = dialog.run()
         dialog.destroy()
+        self.refresh_list()
 
         if response == Gtk.ResponseType.YES:
             subprocess.run(["gamemoded", f"--request={pid}"])
