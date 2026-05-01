@@ -7,8 +7,12 @@ If you want to play **NotITG**, PLEASE read ![THIS](https://github.com/librepup/
 # Info
 ## Packages ![List](https://github.com/librepup/jonabron/blob/master/PACKAGES.md)
 # Usage
+
 <details>
-<summary>NixOS</summary>
+<summary>
+NixOS
+</summary>
+
 Add the **Jonabron** Channel as a Flake Input to your `/etc/nixos/flake.nix`, and use either the provided overlay, or manually reference Jonabron Packages via `inputs.jonabron.packages.x86_64-linux.<package>`:
 ```nix
 {
@@ -40,10 +44,14 @@ Add the **Jonabron** Channel as a Flake Input to your `/etc/nixos/flake.nix`, an
 ```
 
 Then rebuild your NixOS system with the command `doas nixos-rebuild switch --flake /etc/nixos#HOSTNAME` (replace `doas` with your escalation utility of choice).
+
 </details>
 
 <details>
-<summary>GNU Guix</summary>
+<summary>
+GNU Guix
+</summary>
+
 Add the **Jonabron** Channel to your Guix `channels.scm`, located at `~/.config/guix/channels.scm` (and optionally to your `/etc/guix/channels.scm` as well):
 ```scm
 (append (list
