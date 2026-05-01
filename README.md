@@ -10,9 +10,7 @@ If you want to play **NotITG**, PLEASE read ![THIS](https://github.com/librepup/
 
 </details>
 
-# Info
-## Packages ![List](https://github.com/librepup/jonabron/blob/master/PACKAGES.md)
-# Usage
+# Usage/Installation
 
 <details>
 <summary>
@@ -104,3 +102,6 @@ Afterwards, run `guix pull` to update Guix and your Channels. Once that is compl
 %guix-os
 ```
 </details>
+
+# Info
+## Packages ![List](https://github.com/librepup/jonabron/blob/master/PACKAGES.md)
