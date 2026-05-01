@@ -7,7 +7,43 @@ If you want to play **NotITG**, PLEASE read ![THIS](https://github.com/librepup/
 # Info
 ## Packages ![List](https://github.com/librepup/jonabron/blob/master/PACKAGES.md)
 # Usage
-## Guix
+<details>
+<summary>NixOS</summary>
+Add the **Jonabron** Channel as a Flake Input to your `/etc/nixos/flake.nix`, and use either the provided overlay, or manually reference Jonabron Packages via `inputs.jonabron.packages.x86_64-linux.<package>`:
+```nix
+{
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    jonabron.url = "github:librepup/jonabron";
+  };
+  outputs = inputs@{ self, nixpkgs, jonabron, ... }:
+  let
+    system = "x86_64-linux";
+  in
+  {
+    nixosConfigurations.HOSTNAME = nixpkgs.lib.nixosSystem {
+      inherit system;
+      specialArgs = {
+        inherit inputs;
+      };
+      {
+        { config, pkgs, lib, ... }:
+        # Optional, add Overlay:
+        #   nixpkgs.overlays = [ inputs.jonabron.overlays.default ];
+        environment.systemPackages = with pkgs; [ inputs.jonabron.packages.x86_64-linux.gobm ];
+        system.stateVersion = "25.11";
+      }
+    };
+
+  };
+}
+```
+
+Then rebuild your NixOS system with the command `doas nixos-rebuild switch --flake /etc/nixos#HOSTNAME` (replace `doas` with your escalation utility of choice).
+</details>
+
+<details>
+<summary>GNU Guix</summary>
 Add the **Jonabron** Channel to your Guix `channels.scm`, located at `~/.config/guix/channels.scm` (and optionally to your `/etc/guix/channels.scm` as well):
 ```scm
 (append (list
@@ -53,36 +89,4 @@ Afterwards, run `guix pull` to update Guix and your Channels. Once that is compl
 
 %guix-os
 ```
-
-## NixOS
-Add the **Jonabron** Channel as a Flake Input to your `/etc/nixos/flake.nix`, and use either the provided overlay, or manually reference Jonabron Packages via `inputs.jonabron.packages.x86_64-linux.<package>`:
-```nix
-{
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-    geex.url = "github:librepup/jonabron";
-  };
-  outputs = inputs@{ self, nixpkgs, jonabron, ... }:
-  let
-    system = "x86_64-linux";
-  in
-  {
-    nixosConfigurations.HOSTNAME = nixpkgs.lib.nixosSystem {
-      inherit system;
-      specialArgs = {
-        inherit inputs;
-      };
-      {
-        { config, pkgs, lib, ... }:
-        # Optional, add Overlay:
-        #   nixpkgs.overlays = [ inputs.jonabron.overlays.default ];
-        environment.systemPackages = with pkgs; [ inputs.jonabron.packages.x86_64-linux.gobm ];
-        system.stateVersion = "25.11";
-      }
-    };
-
-  };
-}
-```
-
-Then rebuild your NixOS system with the command `doas nixos-rebuild switch --flake /etc/nixos#HOSTNAME` (replace `doas` with your escalation utility of choice).
+</details>
