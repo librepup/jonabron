@@ -36,9 +36,16 @@ Add the **Jonabron** Channel as a Flake Input to your `/etc/nixos/flake.nix`, an
       };
       {
         { config, pkgs, lib, ... }:
-        # Optional, add Overlay:
-        #   nixpkgs.overlays = [ inputs.jonabron.overlays.default ];
-        environment.systemPackages = with pkgs; [ inputs.jonabron.packages.x86_64-linux.gobm ];
+        # -- Optional, add Overlay: --
+        #   nixpkgs.overlays = [
+        #     inputs.jonabron.overlays.default
+        #   ];
+        # --                        --
+
+        environment.systemPackages = with pkgs; [
+          inputs.jonabron.packages.x86_64-linux.gobm
+        ];
+
         system.stateVersion = "25.11";
       }
     };
