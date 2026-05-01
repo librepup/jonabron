@@ -1,8 +1,14 @@
 # Jonabron Channel
 ![Guix Banner](https://raw.githubusercontent.com/librepup/jonabron/refs/heads/master/guixBanner.jpg)
 
-## For NotITG Players (!!)
+<details>
+<summary>
+Notice for NotITG Players
+</summary>
+
 If you want to play **NotITG**, PLEASE read ![THIS](https://github.com/librepup/jonabron/blob/master/nix/packages/notitg/README.md) File!
+
+</details>
 
 # Info
 ## Packages ![List](https://github.com/librepup/jonabron/blob/master/PACKAGES.md)
