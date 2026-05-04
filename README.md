@@ -6,7 +6,7 @@
 Notice for NotITG Players
 </summary>
 
-If you want to play **NotITG**, PLEASE read ![THIS](https://github.com/librepup/jonabron/blob/master/nix/packages/notitg/README.md) File!
+If you want to play **NotITG**, PLEASE read [THIS File](https://github.com/librepup/jonabron/blob/master/nix/packages/notitg/README.md)!
 
 </details>
 
@@ -111,4 +111,4 @@ Afterwards, run `guix pull` to update Guix and your Channels. Once that is compl
 </details>
 
 # Info
-## Packages ![List](https://github.com/librepup/jonabron/blob/master/PACKAGES.md)
+## [Package List](https://github.com/librepup/jonabron/blob/master/PACKAGES.md)
