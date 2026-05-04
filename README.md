@@ -115,6 +115,8 @@ Afterwards, run `guix pull` to update Guix and your Channels. Once that is compl
 <summary>
 Nix
 </summary>
+
+# Package List
  - gobm
  - urbit
  - dangerousjungle-grub-theme
@@ -146,6 +148,8 @@ Nix
 <summary>
 Guix
 </summary>
+
+# Package List
 - emacs-hoon-mode
 - emacs-fancy-dabbrev
 - naitre
