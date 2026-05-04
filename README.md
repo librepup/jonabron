@@ -110,5 +110,62 @@ Afterwards, run `guix pull` to update Guix and your Channels. Once that is compl
 ```
 </details>
 
-# Info
-## [Package List](https://github.com/librepup/jonabron/blob/master/PACKAGES.md)
+# Packages
+<details>
+<summary>
+Nix
+</summary>
+ - gobm
+ - urbit
+ - dangerousjungle-grub-theme
+ - milk-grub-theme
+ - xptheme
+ - winxp-icons
+ - momoisay
+ - epdfinfo
+ - cartographcf-font
+ - osu-lazer-appimage
+ - gnutypewriter-font
+ - jonafonts
+ - jonabar
+ - diinki-aero
+ - windows-vista-theme
+ - revista
+ - windows-xp-theme
+ - aeroshell-desktop
+ - keyboard-layout-exporter
+ - notitg
+ - arrowvortex
+ - image-text-extractor
+ - pybrowse
+ - gamemode-manager
+
+</details>
+
+<details>
+<summary>
+Guix
+</summary>
+- emacs-hoon-mode
+- emacs-fancy-dabbrev
+- naitre
+- vicinae
+- plan9-rio-session
+- font-jonafonts
+- osu-lazer-bin
+- gamemode
+- gamemode-service-type
+- discord
+- oh-my-zsh
+- powerlevel-10k
+- plan9-rc-shell
+- ani-cli
+- ani-skip
+- kew
+- plan9-acme
+- plan9-term
+- claude-code
+- geex-installer
+- geex-bar
+
+</details>
