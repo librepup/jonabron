@@ -34,11 +34,13 @@
     image-text-extractor = pkgs.callPackage ./nix/packages/image-text-extractor/default.nix { };
     pybrowse = pkgs.callPackage ./nix/packages/pybrowse/default.nix { };
     gamemode-manager = pkgs.callPackage ./nix/packages/gamemode-manager/default.nix { };
-    ratctl = pkgs.callPackage ./nix/packages/ratctl/default.nix { };
+    ratctl = pkgs.callPackage ./nix/packages/ratctl/ratctl.nix { };
+    ratctl-udevrules = pkgs.callPackage ./nix/packages/ratctl/ratctl-udevrules.nix { };
   in
   {
     packages.x86_64-linux = {
       ratctl = ratctl;
+      ratctl-udevrules = ratctl-udevrules;
       gobm = gobm;
       urbit = urbit;
       dangerousjungle-grub-theme = dangerousjungle-grub-theme;
@@ -171,6 +173,7 @@
       };
     };
     overlays.default = final: prev: {
+      ratctl-udevrules = ratctl-udevrules;
       ratctl = ratctl;
       gobm = gobm;
       urbit = urbit;
