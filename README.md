@@ -160,6 +160,8 @@ Nix
  - image-text-extractor
  - pybrowse
  - gamemode-manager
+ - ratctl
+ - ratctl-udevrules
 
 </details>
 
