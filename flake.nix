@@ -34,9 +34,11 @@
     image-text-extractor = pkgs.callPackage ./nix/packages/image-text-extractor/default.nix { };
     pybrowse = pkgs.callPackage ./nix/packages/pybrowse/default.nix { };
     gamemode-manager = pkgs.callPackage ./nix/packages/gamemode-manager/default.nix { };
+    ratctl = pkgs.callPackage ./nix/packages/ratctl/default.nix { };
   in
   {
     packages.x86_64-linux = {
+      ratctl = ratctl;
       gobm = gobm;
       urbit = urbit;
       dangerousjungle-grub-theme = dangerousjungle-grub-theme;
@@ -63,6 +65,14 @@
       gamemode-manager = gamemode-manager;
     };
     apps.x86_64-linux = {
+      ratctl = {
+        type = "app";
+        program = "${ratctl}/bin/ratctl";
+        meta = {
+          description = "RatCTL Utility for Managing Mad Catz R.A.T. Mice. (Includes UDev Rules)";
+          mainProgram = "ratctl";
+        };
+      };
       gobm = {
         type = "app";
         program = "${gobm}/bin/gobm";
@@ -161,6 +171,7 @@
       };
     };
     overlays.default = final: prev: {
+      ratctl = ratctl;
       gobm = gobm;
       urbit = urbit;
       notitg = notitg;
