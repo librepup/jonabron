@@ -36,9 +36,11 @@
     gamemode-manager = pkgs.callPackage ./nix/packages/gamemode-manager/default.nix { };
     ratctl = pkgs.callPackage ./nix/packages/ratctl/ratctl.nix { };
     ratctl-udevrules = pkgs.callPackage ./nix/packages/ratctl/ratctl-udevrules.nix { };
+    desktopancs = pkgs.callPackage ./nix/packages/desktopancs/default.nix { };
   in
   {
     packages.x86_64-linux = {
+      desktopancs = desktopancs;
       ratctl = ratctl;
       ratctl-udevrules = ratctl-udevrules;
       gobm = gobm;
@@ -73,6 +75,14 @@
         meta = {
           description = "RatCTL Utility for Managing Mad Catz R.A.T. Mice. (Includes UDev Rules)";
           mainProgram = "ratctl";
+        };
+      };
+      desktopancs = {
+        type = "app";
+        program = "${desktopancs}/bin/DesktopANCS";
+        meta = {
+          description = "A way to get Notifications from your iPhone to your Linux Machine using Bluetooth.";
+          mainProgram = "desktopancs";
         };
       };
       gobm = {
@@ -199,6 +209,7 @@
       pybrowse = pybrowse;
       milk-grub-theme = milk-grub-theme;
       gamemode-manager = gamemode-manager;
+      desktopancs = desktopancs;
     };
   };
 }
