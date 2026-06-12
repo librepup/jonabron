@@ -37,9 +37,11 @@
     ratctl = pkgs.callPackage ./nix/packages/ratctl/ratctl.nix { };
     ratctl-udevrules = pkgs.callPackage ./nix/packages/ratctl/ratctl-udevrules.nix { };
     desktopancs = pkgs.callPackage ./nix/packages/desktopancs/default.nix { };
+    badwolf = pkgs.callPackage ./nix/packages/badwolf/default.nix { };
   in
   {
     packages.x86_64-linux = {
+      badwolf = badwolf;
       desktopancs = desktopancs;
       ratctl = ratctl;
       ratctl-udevrules = ratctl-udevrules;
@@ -69,6 +71,14 @@
       gamemode-manager = gamemode-manager;
     };
     apps.x86_64-linux = {
+      badwolf = {
+        type = "app";
+        program = "${badwolf}/bin/badwolf";
+        meta = {
+          description = "Minimalist and privacy-oriented WebKitGTK+ browser";
+          mainProgram = "badwolf";
+        };
+      };
       ratctl = {
         type = "app";
         program = "${ratctl}/bin/ratctl";
@@ -185,6 +195,7 @@
     overlays.default = final: prev: {
       ratctl-udevrules = ratctl-udevrules;
       ratctl = ratctl;
+      badwolf = badwolf;
       gobm = gobm;
       urbit = urbit;
       notitg = notitg;
