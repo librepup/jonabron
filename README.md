@@ -77,10 +77,17 @@ Then rebuild your NixOS system with the command `doas nixos-rebuild switch --fla
 
 </details>
 
+
+# Package List
+[![Nix Packages](https://raw.githubusercontent.com/librepup/jonabron/refs/heads/master/list.png)](https://github.com/librepup/jonabron/blob/master/list.md)
+
+
 <details>
 <summary>
 GNU Guix
 </summary>
+
+# Installation
 
 Add the **Jonabron** Channel to your Guix `channels.scm`, located at `~/.config/guix/channels.scm` (and optionally to your `/etc/guix/channels.scm` as well):
 ```scm
@@ -127,47 +134,6 @@ Afterwards, run `guix pull` to update Guix and your Channels. Once that is compl
 
 %guix-os
 ```
-</details>
-
-# Package List
-[![Nix Packages](https://raw.githubusercontent.com/librepup/jonabron/refs/heads/master/list.png)](https://github.com/librepup/jonabron/blob/master/list.md)
-
-<!--
-# Packages
-<details>
-<summary>
-Nix
-</summary>
-
-# Package List
- - gobm
- - urbit
- - dangerousjungle-grub-theme
- - milk-grub-theme
- - xptheme
- - winxp-icons
- - momoisay
- - epdfinfo
- - cartographcf-font
- - osu-lazer-appimage
- - gnutypewriter-font
- - jonafonts
- - jonabar
- - diinki-aero
- - windows-vista-theme
- - revista
- - windows-xp-theme
- - aeroshell-desktop
- - keyboard-layout-exporter
- - notitg
- - arrowvortex
- - image-text-extractor
- - pybrowse
- - gamemode-manager
- - ratctl
- - ratctl-udevrules
-
-</details>
 
 <details>
 <summary>
@@ -198,4 +164,5 @@ Guix
 - geex-bar
 
 </details>
--->
+
+</details>
