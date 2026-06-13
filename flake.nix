@@ -38,9 +38,11 @@
     ratctl-udevrules = pkgs.callPackage ./nix/packages/ratctl/ratctl-udevrules.nix { };
     desktopancs = pkgs.callPackage ./nix/packages/desktopancs/default.nix { };
     badwolf = pkgs.callPackage ./nix/packages/badwolf/default.nix { };
+    how2 = pkgs.callPackage ./nix/packages/how2/default.nix { };
   in
   {
     packages.x86_64-linux = {
+      how2 = how2;
       badwolf = badwolf;
       desktopancs = desktopancs;
       ratctl = ratctl;
@@ -71,6 +73,14 @@
       gamemode-manager = gamemode-manager;
     };
     apps.x86_64-linux = {
+      how2 = {
+        type = "app";
+        program = "${how2}/bin/how2";
+        meta = {
+          description = "how2: AI for your Terminal";
+          mainProgram = "how2";
+        };
+      };
       badwolf = {
         type = "app";
         program = "${badwolf}/bin/badwolf";
@@ -207,6 +217,7 @@
       cartographcf-font = cartographcf-font;
       osu-lazer-appimage = osu-lazer-appimage;
       gnutypewriter-font = gnutypewriter-font;
+      how2 = how2;
       jonafonts = jonafonts;
       jonabar = jonabar;
       diinki-aero = diinki-aero;
