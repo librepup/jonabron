@@ -1,0 +1,17 @@
+# Packages
+ - arrowvortex: app: ArrowVortex Chart Editor for StepMania, osu!, (Not)ITG, and More!
+ - badwolf: app: Minimalist and privacy-oriented WebKitGTK+ browser
+ - desktopancs: app: A way to get Notifications from your iPhone to your Linux Machine using Bluetooth.
+ - epdfinfo: app: EPDFInfo from Emacs
+ - gamemode-manager: app: Graphical User Interface to Manage GameMode Services.
+ - gobm: app: Download osu! Beatmaps from a URL
+ - how2: app: how2: AI for your Terminal
+ - image-text-extractor: app: Script for Extracting Text from Images
+ - jonabar: app: Customized Polybar Wrapper
+ - keyboard-layout-exporter: app: Export Current Keyboard Layout and Maps as Image.
+ - momoisay: app: A CLI program written in C featuring talking Saiba Momoi from Blue Archive
+ - notitg: app: NotITG Rhythm Game
+ - osu-lazer-appimage: app: Rhythm is just a *click* away!
+ - pybrowse: app: Browser Selection Utility for Opening URLs.
+ - ratctl: app: RatCTL Utility for Managing Mad Catz R.A.T. Mice. (Includes UDev Rules)
+ - urbit: app: A clean-slate OS and network for the 21st century.

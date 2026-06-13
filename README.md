@@ -129,6 +129,10 @@ Afterwards, run `guix pull` to update Guix and your Channels. Once that is compl
 ```
 </details>
 
+# Package List
+[![Nix Packages](https://raw.githubusercontent.com/librepup/jonabron/refs/heads/master/list.png)](https://github.com/librepup/jonabron/blob/master/list.md)
+
+<!--
 # Packages
 <details>
 <summary>
@@ -194,3 +198,4 @@ Guix
 - geex-bar
 
 </details>
+-->
