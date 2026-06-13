@@ -137,10 +137,9 @@ Afterwards, run `guix pull` to update Guix and your Channels. Once that is compl
 
 <details>
 <summary>
-Guix
+Package List
 </summary>
 
-# Package List
 - emacs-hoon-mode
 - emacs-fancy-dabbrev
 - naitre
