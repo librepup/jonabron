@@ -115,6 +115,10 @@ stdenv.mkDerivation {
       --replace-fail "INETSTATUSREPLACEMENTTEXT14171209" \
       "${inetScript}/bin/mori-inet"
 
+    substitute ${./files/shondo.ini} $out/etc/shondo.ini \
+      --replace-fail "INETSTATUSREPLACEMENTTEXT14171209" \
+      "${inetScript}/bin/mori-inet"
+
     cp ${./files/config.ini} $out/etc/main.ini
     cp ${./files/mori.ini} $out/etc/mori.ini
     cp ${./files/gigi.ini} $out/etc/gigi.ini
@@ -122,9 +126,14 @@ stdenv.mkDerivation {
     cp ${./files/camila.ini} $out/etc/camila.ini
     cp ${./files/nihmune.ini} $out/etc/nihmune.ini
     cp ${./files/nihmune.ini} $out/etc/numi.ini
+    cp ${./files/shondo.ini} $out/etc/shondo.ini
     cp ${./files/tray.ini} $out/etc/tray.ini
 
     substitute ${./files/mori.ini} $out/etc/mori.ini \
+      --replace-fail "INETSTATUSREPLACEMENTTEXT14171209" \
+      "${inetScript}/bin/mori-inet"
+
+    substitute ${./files/shondo.ini} $out/etc/shondo.ini \
       --replace-fail "INETSTATUSREPLACEMENTTEXT14171209" \
       "${inetScript}/bin/mori-inet"
 
